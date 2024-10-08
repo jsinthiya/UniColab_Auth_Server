@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:display=swap');
+
+:root {
+    --blue: #0d6e6e;
+    --bg: rgb(21, 60, 60);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: var(--blue);}
+
+body {
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(95, 95, 106);
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    min-width: 100%;
+    min-height: 100%;
+    box-shadow: 0 12px 24px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.container video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    box-shadow: 10em 0 7em 5em var(--bg);
+    transform: skew(45deg);
+    /* background: url('https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&h=1260&w=750&dpr=1') center / cover no-repeat; */
+    z-index: -1;
+    /* filter: hue-rotate(15deg); */
+    opacity: 0.9;
+}
+.container::before {
+    content: "";
+    /* background: url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&h=1260&w=750&dpr=1') center / cover no-repeat; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: hue-rotate(15deg);
+
+}
+nav ul {
+    display: flex;
+    
+}
+nav li{
+    display: flex;
+    list-style: none;
+    margin: 3vh 4vw;
+    align-items: center;
+    cursor: pointer;
+}
+.blue-logo{
+    background-color: var(--blue);
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin: 0 1em;
+    box-shadow: inset 6px 3px 12px -8px white;
+
+}
+.gray{
+    color: rgba(179, 182, 186);
+}
+.blue{
+    color: var(--blue);
+    cursor: pointer;
+}
+.text{
+    padding: 2em 0;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 8vw;
+}
+
+h1 {
+    font-size: 2.5em;
+    word-spacing: 0.1em;
+}
+.form{
+    width: 40%;
+}
+.input-icon{
+    background-color: rgba(128, 128, 128, .1);
+    padding: .3em 1.2em;
+    margin-bottom: 1.5em;
+    border-radius: 1.2em;
+    position: relative;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+}
+.input-icon:hover{
+    border: 2px solid var(--blue);
+}
+.name{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.f-name,
+.l-name{
+    width: 48%;
+}
+
+.field {
+    width: 100%;
+}
+.field input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    padding-right: 1em;
+}
+.field input {
+    background-color: transparent;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}
+
+
+label {
+    font-size: 0.8em;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    padding-right: 1em;
+}
+
+.gray-btn {
+    background-color: #0d995f
+}
+.blue-btn{
+    background-color: var(--blue);
+}
+.btn{
+    padding: 1.5vh 2vw;
+    color: white;
+    border-radius: 5em;
+    font-size: 1em;
+    width: 48%;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 1em 1em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    justify-content: end;
+    margin: 0, 0.5em;
+    right: 0;
+    font-size: 3em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+}
+@media screen and (min-width: 770px){
+    form{
+        width: 50%
+    }
+}
+@media only screen and (max-width: 770px) {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container::after {
+        transform: skew(0deg);
+        opacity: 0.5;
+    }
+
+    .hero {
+        height: 80vh;
+        margin: 0 3vw;
+    }
+    .text{
+        margin: auto;
+        text-align: center;
+        padding: 1em;
+    }
+    h1{
+        margin: 0;
+    }
+    form{
+        width: 100%;
+    }
+}
